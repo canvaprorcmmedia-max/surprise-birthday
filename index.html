@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Surprise birthday love letter">
+  <title>Untukmu, selalu · Happy Birthday</title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hearts" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">UNTUKMU, SELALU</p>
+        <h1>Happy Birthday,<br><span id="heroName">Sayang</span> <span class="heart">♥</span></h1>
+        <p class="hero-subtitle" id="heroIntro">Hari ini adalah tentang seseorang yang begitu berarti.</p>
+        <button class="primary-btn" id="openBtn">Buka Kejutan <span>♥</span></button>
+        <p class="scroll-hint">scroll perlahan ↓</p>
+      </div>
+    </section>
+
+    <div id="surpriseContent" class="hidden-content">
+      <section class="section message-section">
+        <div class="container narrow reveal">
+          <p class="eyebrow">A LITTLE MESSAGE</p>
+          <h2 id="messageTitle">Untuk kamu, di hari spesialmu</h2>
+          <div class="ornament">♥</div>
+          <p class="body-copy" id="mainMessage"></p>
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="container reveal">
+          <p class="eyebrow">OUR LITTLE MEMORIES</p>
+          <h2>Beberapa cerita yang kusimpan</h2>
+          <div class="gallery" id="gallery"></div>
+        </div>
+      </section>
+
+      <section class="section timeline-section">
+        <div class="container narrow">
+          <div class="reveal">
+            <p class="eyebrow">OUR STORY</p>
+            <h2>Perjalanan kecil kita</h2>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </section>
+
+      <section class="section letter-section">
+        <div class="container narrow reveal">
+          <p class="eyebrow">A LETTER FOR YOU</p>
+          <h2>Surat kecil dariku</h2>
+          <button class="envelope" id="envelope" aria-label="Buka surat cinta">
+            <span class="envelope-top"></span>
+            <span class="envelope-body">♥</span>
+          </button>
+          <div class="letter hidden" id="letter">
+            <p id="loveLetter"></p>
+            <p class="signature">— <span id="signatureName"></span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wishes-section">
+        <div class="container narrow reveal">
+          <p class="eyebrow">MY WISH FOR YOU</p>
+          <h2>Harapanku untukmu</h2>
+          <div class="wish-card">
+            <p id="wishes"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section countdown-section">
+        <div class="container reveal">
+          <p class="eyebrow">A SPECIAL DAY</p>
+          <h2 id="countdownTitle">Menuju hari spesialmu...</h2>
+          <div class="countdown" id="countdown">
+            <div><strong id="days">00</strong><span>Hari</span></div>
+            <div><strong id="hours">00</strong><span>Jam</span></div>
+            <div><strong id="minutes">00</strong><span>Menit</span></div>
+            <div><strong id="seconds">00</strong><span>Detik</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-section" id="final">
+        <div class="container narrow reveal">
+          <div class="final-heart">♥</div>
+          <p class="eyebrow">ONE LAST THING</p>
+          <h2 id="closingMessage"></h2>
+          <p class="final-name">Happy Birthday, <span id="finalName"></span> ♥</p>
+          <button class="surprise-btn" id="surpriseBtn">Klik untuk kejutan terakhir ✨</button>
+          <p class="from">With love, <span id="fromName"></span></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="music-control">
+    <button id="musicBtn" aria-label="Putar musik">♫ <span id="musicText">Putar musik</span></button>
+    <audio id="audio" loop></audio>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close-modal" id="closeModal">×</button>
+      <div class="big-heart">♥</div>
+      <p class="eyebrow">FOR YOU</p>
+      <h2 id="modalTitle">Happy Birthday, Sayang ♥</h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <div class="lightbox hidden" id="lightbox">
+    <button id="closeLightbox">×</button>
+    <img id="lightboxImg" src="" alt="Kenangan">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
