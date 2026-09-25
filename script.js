@@ -43,7 +43,7 @@ Apa pun yang terjadi nanti, jangan pernah lupa bahwa kamu adalah seseorang yang 
 
   closingMessage: "Semoga hari ini menjadi awal dari banyak hal indah yang akan datang.",
 
-  birthdayDate: "2026-12-31T00:00:00",
+  birthdayDate: "2026-12-12T00:00:00",
 
   // Ganti nama file sesuai foto milikmu.
   photos: [
@@ -56,13 +56,16 @@ Apa pun yang terjadi nanti, jangan pernah lupa bahwa kamu adalah seseorang yang 
   ],
 
   timeline: [
-    { date: "MOMEN 01", title: "Pertama kali kita bertemu", text: "Tulis cerita singkat tentang momen ini." },
-    { date: "MOMEN 02", title: "Momen yang tidak terlupakan", text: "Tulis kenangan yang paling kamu sukai." },
-    { date: "MOMEN 03", title: "Cerita kecil kita", text: "Tulis cerita kecil yang selalu membuatmu tersenyum." },
-    { date: "MOMEN 04", title: "Sampai hari ini", text: "Tulis bagaimana perjalanan kalian sampai sekarang." }
+    { date: "Sabtu, 29 Agustus 2026", title: "Pertama kali kita bertemu", text: "Pertemuan yang begitu singkat namun ternyata ada hati yg melekat." },
+    { date: "Jum'at, 11 September 2026", title: "Momen yang tidak terlupakan", text: "Untuk kesekian kalinya aku kembali membuka hati ku untuk orang yang aku rasa aku akan bisa bahagia bersamanya." },
+    { date: "Selasa, 15 September 2026", title: "Cerita kecil kita", text: "Hari pertemuan sederhana kita tetapi menjadi kesan pertama yg berarti bagiku semoga kita bisa bertemu di kebetulan lainnya." },
+    { date: "Momen Setiap Hari", title: "Sampai hari ini", text: "Hari hari selalu disisi dengan obrolan ringan hingga manja selalu terulang namu tak pernah ku merasa bosan di setiap percakapan selalu memunculkan benih cinta lainnya." }
   ],
 
-  music: "music/lagu1.mp3",
+  music: [
+    "music/lagu1.mp3",
+    "music/lagu2.mp3"
+  ],
 
   modalText: "Semoga senyummu selalu punya alasan untuk hadir. Terima kasih sudah menjadi bagian terindah dari ceritaku. ❤️"
 };
@@ -116,23 +119,46 @@ birthdayData.timeline.forEach((item, i) => {
   timeline.appendChild(el);
 });
 
-const audio = $("audio");
-audio.src = birthdayData.music;
+const audio = document.getElementById("audio");
+const musicBtn = document.getElementById("musicBtn");
+const musicSelect = document.getElementById("musicSelect");
+const musicText = document.getElementById("musicText");
+
 let musicPlaying = false;
 
-$("musicBtn").addEventListener("click", async () => {
+// Lagu pertama sebagai lagu awal
+if (Array.isArray(birthdayData.music) && birthdayData.music.length > 0) {
+  audio.src = birthdayData.music[0];
+} else {
+  audio.src = birthdayData.music;
+}
+
+// Ganti lagu ketika pilihan berubah
+musicSelect.addEventListener("change", () => {
+  audio.pause();
+  audio.currentTime = 0;
+  audio.src = musicSelect.value;
+  musicPlaying = false;
+  musicText.textContent = "Putar musik";
+});
+
+// Tombol putar / jeda
+musicBtn.addEventListener("click", async () => {
   if (!audio.src) return;
+
   if (musicPlaying) {
     audio.pause();
-    $("musicText").textContent = "Putar musik";
+    musicText.textContent = "Putar musik";
   } else {
     try {
       await audio.play();
-      $("musicText").textContent = "Jeda musik";
-    } catch {
-      alert("Tambahkan file musik ke folder music/ lalu tekan tombol ini lagi.");
+      musicText.textContent = "Jeda musik";
+    } catch (error) {
+      alert("Pastikan file musik ada di folder music/.");
+      return;
     }
   }
+
   musicPlaying = !musicPlaying;
 });
 

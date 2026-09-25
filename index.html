@@ -105,9 +105,17 @@
   </main>
 
   <div class="music-control">
-    <button id="musicBtn" aria-label="Putar musik">♫ <span id="musicText">Putar musik</span></button>
-    <audio id="audio" loop></audio>
-  </div>
+    <select id="musicSelect" aria-label="Pilih lagu">
+    <option value="music/lagu1.mp3">🎵 Lagu 1</option>
+    <option value="music/lagu2.mp3">🎵 Lagu 2</option>
+  </select>
+
+  <button id="musicBtn" aria-label="Putar musik">
+    🎵 <span id="musicText">Putar musik</span>
+  </button>
+
+  <audio id="audio" loop></audio>
+</div>
 
   <div class="modal hidden" id="modal">
     <div class="modal-card">
