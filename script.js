@@ -57,7 +57,7 @@ Apa pun yang terjadi nanti, jangan pernah lupa bahwa kamu adalah seseorang yang 
 
   timeline: [
     { date: "Sabtu, 29 Agustus 2026", title: "Pertama kali kita bertemu", text: "Pertemuan yang begitu singkat namun ternyata ada hati yg melekat." },
-    { date: "Jum'at, 11 September 2026", title: "Momen yang tidak terlupakan", text: "Untuk kesekian kalinya aku kembali membuka hati ku untuk orang yang aku rasa aku akan bisa bahagia bersamanya." },
+    { date: "Ahad, 13 September 2026", title: "Momen yang tidak terlupakan", text: "Untuk kesekian kalinya aku kembali membuka hati ku untuk orang yang aku rasa aku akan bisa bahagia bersamanya." },
     { date: "Selasa, 15 September 2026", title: "Cerita kecil kita", text: "Hari pertemuan sederhana kita tetapi menjadi kesan pertama yg berarti bagiku semoga kita bisa bertemu di kebetulan lainnya." },
     { date: "Momen Setiap Hari", title: "Sampai hari ini", text: "Hari hari selalu disisi dengan obrolan ringan hingga manja selalu terulang namu tak pernah ku merasa bosan di setiap percakapan selalu memunculkan benih cinta lainnya." }
   ],
